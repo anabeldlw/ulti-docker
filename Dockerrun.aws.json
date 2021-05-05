@@ -22,8 +22,15 @@
 		{
 			"name": "nginx",
 			"image": "anabeldlw/multi-client",
-			"hostname": "nginx"
-			"essential": true		
+			"hostname": "nginx",
+			"essential": true,	
+			"portMappings": [
+				{
+				"hostPort": 80,
+				"containerPort": 80
+				}
+			],
+			"links": ["client", "server"]
 		}
 	]
 }
